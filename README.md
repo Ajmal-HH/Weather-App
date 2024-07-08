@@ -39,7 +39,7 @@
 
 3. Create a `.env` file in the root directory with the following contents:
     ```
-  VITE_API_KEY=WEATHER-APP-API-KEY
+    VITE_API_KEY=WEATHER-APP-API-KEY
     ``` 
 4. Start the frontend development server:
     ```bash
