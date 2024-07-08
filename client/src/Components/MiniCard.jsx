@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import  { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import sun from '../assets/icons/sun.png'
 import cloud from '../assets/icons/cloud.png'
 import fog from '../assets/icons/fog.png'
@@ -11,16 +11,16 @@ import wind from '../assets/icons/windy.png'
 const MiniCard = ({ time, temp, iconString }) => {
   const [icon, setIcon] = useState()
 
-  console.log(iconString,"iconstring");
+  console.log(iconString, "iconstring");
   useEffect(() => {
     if (iconString) {
       if (iconString.toLowerCase().includes('cloud')) {
         setIcon(cloud)
-       } else if (iconString.toLowerCase().includes('rain')) {
+      } else if (iconString.toLowerCase().includes('rain')) {
         setIcon(rain)
-      }else if(iconString.toLowerCase().includes('overcast')){
+      } else if (iconString.toLowerCase().includes('overcast')) {
         setIcon(rain)
-      }else if (iconString.toLowerCase().includes('clear')) {
+      } else if (iconString.toLowerCase().includes('clear')) {
         setIcon(sun)
       } else if (iconString.toLowerCase().includes('thunder')) {
         setIcon(storm)

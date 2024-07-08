@@ -47,7 +47,7 @@ const WeatherCard = ({
     }
   }, [iconString]);
 
-  const handleFav = () => {  
+  const handleFav = () => {
     const token = localStorage.getItem("token");
 
     if (!token) {
@@ -61,17 +61,17 @@ const WeatherCard = ({
         Authorization: `Bearer ${token}`
       }
     })
-    .then(() => {
-      toast.success('City added to Favorite');
-      onFavoriteAdded(); // Call the function to refresh favorite cities
-    })
-    .catch((err) => {
-      if (err.response && err.response.data && err.response.data.message) {
-        toast.error(err.response.data.message);
-      } else {
-        toast.error('An error occurred. Please try again later.');
-      }
-    });
+      .then(() => {
+        toast.success('City added to Favorite');
+        onFavoriteAdded(); // Call the function to refresh favorite cities
+      })
+      .catch((err) => {
+        if (err.response && err.response.data && err.response.data.message) {
+          toast.error(err.response.data.message);
+        } else {
+          toast.error('An error occurred. Please try again later.');
+        }
+      });
   };
 
   return (

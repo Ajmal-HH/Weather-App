@@ -7,7 +7,6 @@ import jwt from 'jsonwebtoken'
 const tokenBlacklist = new Set();
 
 
-
 const securePassword = async (password) => {
     try {
         const passwordHash = await bcrypt.hash(password, 10)
@@ -17,8 +16,8 @@ const securePassword = async (password) => {
     }
 }
 
-const userSignUp = async (req, res) => { 
-    const { email, password,name,mobile } = req.body;
+const userSignUp = async (req, res) => {
+    const { email, password, name, mobile } = req.body;
     const hashedPassword = await securePassword(password)
 
     try {
@@ -30,7 +29,7 @@ const userSignUp = async (req, res) => {
                 mobile
             },
         });
-        res.status(201).json({status : true});
+        res.status(201).json({ status: true });
     } catch (error) {
         res.status(400).json({ error: 'User already exists' });
     }
@@ -50,7 +49,7 @@ const userLogin = async (req, res) => {
     }
 }
 
-const logoutUser = (req,res) => {
+const logoutUser = (req, res) => {
     req.session = null
     const token = req.headers.authorization.split(' ')[1];
     if (token) {

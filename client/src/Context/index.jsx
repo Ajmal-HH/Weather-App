@@ -45,7 +45,7 @@ export const StateContextProvider = ({ children }) => {
                 axios.request(options),
                 axios.request(historicalOptions)
             ]);
-            
+
             console.log(forecastResponse.data);
             const forecastData = Object.values(forecastResponse.data.locations)[0];
             setLocation(forecastData.address);

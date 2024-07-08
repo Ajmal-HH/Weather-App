@@ -94,10 +94,10 @@ const Dashboard = () => {
         <h1 className='font-bold tracking-wide text-3xl'>Weather App</h1>
         <div className='bg-white w-[15rem] overflow-hidden shadow-2xl rounded flex items-center p-2 gap-2'>
           <img src={search} alt="search" className='w-[1.5rem] h-[1.5rem]' />
-          <input 
-            className='focus:outline-none w-full text-[#212121] text-lg' 
+          <input
+            className='focus:outline-none w-full text-[#212121] text-lg'
             placeholder='Search city'
-            value={input} 
+            value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyUp={(e) => {
               if (e.key === 'Enter') {
@@ -114,7 +114,7 @@ const Dashboard = () => {
       </nav>
       <BackgroundLayout />
       <main className='w-full flex flex-wrap gap-8 py-4 px-[10%] items-center justify-center'>
-        <WeatherCard 
+        <WeatherCard
           place={thisLocation}
           windspeed={weather.wspd}
           humidity={weather.humidity}
@@ -126,7 +126,7 @@ const Dashboard = () => {
         />
         <div className='flex justify-center gap-8 flex-wrap w-[60%]'>
           {values?.slice(1, 7).map((curr) => (
-            <MiniCard 
+            <MiniCard
               key={curr.datetime}
               time={curr.datetime}
               temp={curr.temp}
@@ -155,7 +155,7 @@ const Dashboard = () => {
         <div className='w-full h-10  glassCard  text-white flex justify-center items-center font-bold text-xl'>PREVIOUS 6 DAYS WEATHER</div>
         <div className='flex justify-center gap-8 flex-wrap w-[60%]'>
           {historicalValues?.slice(-6).map((curr) => (
-            <MiniCard 
+            <MiniCard
               key={curr.datetime}
               time={curr.datetime}
               temp={curr.temp}
@@ -163,7 +163,7 @@ const Dashboard = () => {
             />
           ))}
         </div>
-        
+
       </main>
     </div>
   );
