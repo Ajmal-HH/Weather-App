@@ -75,8 +75,6 @@ const removeFavCity = async (req, res) => {
   }
 };
 
-
-
 export {
     addFavoriteCity,
     getFavoriteCity,
