@@ -22,10 +22,10 @@ const addFavoriteCity = async (req, res) => {
       }
 
       const favorite = await prisma.favorite.create({
-        data: {
-          city: place,
-          userId,
-        },
+          data: {
+            city: place,
+            userId,
+          },
       });
 
       res.status(201).json(favorite);
